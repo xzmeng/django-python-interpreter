@@ -10,5 +10,10 @@ class Script(models.Model):
         verbose_name = _('Script')
         verbose_name_plural = _('Scripts')
 
+    # for python2
     def __unicode__(self):
+        return self.name
+
+    # for python3
+    def __str__(self):
         return self.name
