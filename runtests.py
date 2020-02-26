@@ -5,10 +5,9 @@ import django
 from django.conf import settings
 from django.test.utils import get_runner
 
-
 if not settings.configured:
     settings.configure(
-        DATABASES = {
+        DATABASES={
             'default': {
                 'ENGINE': 'django.db.backends.sqlite3',
                 'NAME': ':memory:',
@@ -29,7 +28,7 @@ if not settings.configured:
             'webshell',
         ],
 
-        TEMPLATES = [
+        TEMPLATES=[
             {
                 'BACKEND': 'django.template.backends.django.DjangoTemplates',
                 'APP_DIRS': True,
@@ -44,7 +43,7 @@ if not settings.configured:
             },
         ],
 
-        MIDDLEWARE_CLASSES = [
+        MIDDLEWARE_CLASSES=[
             'django.middleware.security.SecurityMiddleware',
             'django.contrib.sessions.middleware.SessionMiddleware',
             'django.middleware.common.CommonMiddleware',
@@ -55,7 +54,7 @@ if not settings.configured:
             'django.middleware.clickjacking.XFrameOptionsMiddleware',
         ],
 
-        MIDDLEWARE = [
+        MIDDLEWARE=[
             'django.middleware.security.SecurityMiddleware',
             'django.contrib.sessions.middleware.SessionMiddleware',
             'django.middleware.common.CommonMiddleware',
@@ -74,7 +73,7 @@ def runtests():
     django.setup()
     TestRunner = get_runner(settings)
     test_runner = TestRunner(verbosity=1, interactive=True)
-    
+
     sys.exit(test_runner.run_tests([]))
 
 
