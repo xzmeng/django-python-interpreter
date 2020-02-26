@@ -14,7 +14,7 @@ setup(
     url='https://github.com/xzmeng/django-python-interpreter',
     download_url='https://github.com/xzmeng/django-python-interpreter/tarball/master',
     license='MIT',
-    packages=find_packages(),
+    packages=find_packages(exclude=('example_project',)),
     package_data={'webshell': [
         'templates/webshell/*',
         'static/css/*',
